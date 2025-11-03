@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -51,12 +51,12 @@ const Navbar = () => {
             </motion.button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                  className="text-foreground/80 hover:text-primary transition-all font-medium"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -65,6 +65,17 @@ const Navbar = () => {
                   {item.label}
                 </motion.button>
               ))}
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-primary/50 hover:bg-primary/10 transition-all"
+                asChild
+              >
+                <a href="/Kanishka-Sankaran-Resume.pdf" download="Kanishka_Sankaran_Resume.pdf">
+                  <Download className="w-4 h-4 mr-2" />
+                  Resume
+                </a>
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -102,7 +113,7 @@ const Navbar = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-2xl font-display font-semibold text-foreground hover:text-primary transition-colors"
+                className="text-2xl font-display font-semibold text-foreground hover:text-primary transition-all"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -110,6 +121,16 @@ const Navbar = () => {
                 {item.label}
               </motion.button>
             ))}
+            <Button
+              variant="outline"
+              className="border-primary/50 hover:bg-primary/10 transition-all"
+              asChild
+            >
+              <a href="/Kanishka-Sankaran-Resume.pdf" download="Kanishka_Sankaran_Resume.pdf">
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
+              </a>
+            </Button>
           </motion.div>
         </motion.div>
       )}

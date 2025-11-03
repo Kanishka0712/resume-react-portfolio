@@ -76,7 +76,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.span
                     key={skill}
-                    className="px-3 py-1.5 rounded-lg bg-muted/50 text-foreground text-sm border border-border/50 hover:border-primary/50 transition-colors"
+                    className="px-3 py-1.5 rounded-lg bg-muted/50 text-foreground text-sm border border-border/50 hover:border-primary/50 hover:bg-muted transition-all"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}

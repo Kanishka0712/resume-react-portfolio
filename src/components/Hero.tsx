@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -80,7 +80,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-effect"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-effect transition-all"
               onClick={() => scrollToSection("projects")}
             >
               View My Work
@@ -88,10 +88,21 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary/50 hover:bg-primary/10"
+              className="border-primary/50 hover:bg-primary/10 transition-all"
               onClick={() => scrollToSection("contact")}
             >
               Get In Touch
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-secondary/50 hover:bg-secondary/10 transition-all"
+              asChild
+            >
+              <a href="/Kanishka-Sankaran-Resume.pdf" download="Kanishka_Sankaran_Resume.pdf">
+                <Download className="w-4 h-4 mr-2" />
+                Resume
+              </a>
             </Button>
           </motion.div>
 
@@ -101,28 +112,31 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <a
+            <motion.a
               href="https://github.com/Kanishka0712"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all"
+              whileHover={{ scale: 1.1, y: -2 }}
             >
               <Github className="w-6 h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://linkedin.com/in/kanishka-sankaran"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all"
+              whileHover={{ scale: 1.1, y: -2 }}
             >
               <Linkedin className="w-6 h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="mailto:kanishkasankaran07@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all"
+              whileHover={{ scale: 1.1, y: -2 }}
             >
               <Mail className="w-6 h-6" />
-            </a>
+            </motion.a>
           </motion.div>
         </motion.div>
 

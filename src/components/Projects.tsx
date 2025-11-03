@@ -94,7 +94,7 @@ const Projects = () => {
                   <div className="flex gap-3">
                     <Button
                       size="sm"
-                      className="bg-primary hover:bg-primary/90"
+                      className="bg-primary hover:bg-primary/90 transition-all"
                     >
                       <Code className="w-4 h-4 mr-2" />
                       View Code
@@ -102,7 +102,7 @@ const Projects = () => {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-primary/50 hover:bg-primary/10"
+                      className="border-primary/50 hover:bg-primary/10 transition-all"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo

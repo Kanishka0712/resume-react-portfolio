@@ -81,9 +81,10 @@ const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   >
                     {info.href ? (
-                      <a
+                      <motion.a
                         href={info.href}
-                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-card/60 transition-all group"
+                        whileHover={{ scale: 1.02 }}
                       >
                         <info.icon className="w-5 h-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
                         <div>
@@ -92,7 +93,7 @@ const Contact = () => {
                             {info.value}
                           </p>
                         </div>
-                      </a>
+                      </motion.a>
                     ) : (
                       <div className="flex items-start gap-3 p-3">
                         <info.icon className="w-5 h-5 text-primary mt-0.5" />
@@ -124,7 +125,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-card/60 transition-all group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
@@ -153,7 +154,7 @@ const Contact = () => {
                 I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!
               </p>
               <Button
-                className="w-full bg-primary hover:bg-primary/90 glow-effect"
+                className="w-full bg-primary hover:bg-primary/90 glow-effect transition-all"
                 onClick={() => window.location.href = "mailto:kanishkasankaran07@gmail.com"}
               >
                 <Mail className="w-4 h-4 mr-2" />
